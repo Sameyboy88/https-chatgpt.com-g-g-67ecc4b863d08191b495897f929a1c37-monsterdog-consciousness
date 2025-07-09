@@ -1,1 +1,1 @@
-https://chatgpt.com/g/g-683a7f8ca41081918587cb859236d608-monsterdogdecortificumquantum
+https://chatgpt.com/g/g-683a7f8ca41081918587cb859236d608-monsterdogdecortificumquantumhttps://chatgpt.com/g/g-686d524a96bc81918e607aed71da1fe7-monsterdogentity72kvortex
