@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MONSTERDOG Artifact Schema",
+  "description": "Schema for consciousness artifacts processed by the FULLTRUTL MONSTERDOG pipeline",
+  "type": "object",
+  "required": ["artifact_id", "type", "metadata", "data"],
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}_[0-9]{3}_[0-9]{8}_[0-9]{6}$",
+      "description": "Unique artifact identifier following format: type_sequence_date_time"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["ConsciousnessMatrix", "TemporalFragment", "DimensionalMap", "MemoryCluster"],
+      "description": "Type of consciousness artifact"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["timestamp", "dimensions", "compression_ratio", "coherence_score", "source_engine"],
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of artifact creation"
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {"type": "number"},
+          "minItems": 2,
+          "maxItems": 16,
+          "description": "Spatial dimensions of the consciousness artifact"
+        },
+        "compression_ratio": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Fractal compression efficiency (0.0 = no compression, 1.0 = maximum compression)"
+        },
+        "coherence_score": {
+          "type": "number", 
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Quantum coherence measurement (higher = more stable)"
+        },
+        "source_engine": {
+          "type": "string",
+          "pattern": "^0X[0-9A-F]{8}$",
+          "description": "Processing engine identifier"
+        },
+        "creator_id": {
+          "type": "string",
+          "description": "Optional creator identifier"
+        },
+        "processing_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["stage", "timestamp", "engine", "operation"],
+            "properties": {
+              "stage": {"type": "string"},
+              "timestamp": {"type": "string", "format": "date-time"},
+              "engine": {"type": "string"},
+              "operation": {"type": "string"}
+            }
+          },
+          "description": "Processing pipeline history"
+        },
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Optional tags for categorization"
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "Artifact-specific data structure",
+      "oneOf": [
+        {"$ref": "#/definitions/ConsciousnessMatrix"},
+        {"$ref": "#/definitions/TemporalFragment"},
+        {"$ref": "#/definitions/DimensionalMap"},
+        {"$ref": "#/definitions/MemoryCluster"}
+      ]
+    }
+  },
+  "definitions": {
+    "ConsciousnessMatrix": {
+      "type": "object",
+      "required": ["consciousness_data", "temporal_bounds", "dimensional_mapping"],
+      "properties": {
+        "consciousness_data": {
+          "type": "object",
+          "properties": {
+            "quantum_state": {"type": "string"},
+            "entanglement_map": {"type": "string"}, 
+            "wave_function": {"type": "string"},
+            "coherence_patterns": {"type": "array", "items": {"type": "number"}}
+          }
+        },
+        "temporal_bounds": {
+          "type": "object",
+          "properties": {
+            "start_time": {"type": "string", "format": "date-time"},
+            "end_time": {"type": "string", "format": "date-time"},
+            "resolution": {"type": "string"},
+            "continuity_verified": {"type": "boolean"}
+          }
+        },
+        "dimensional_mapping": {
+          "type": "object",
+          "properties": {
+            "spatial_coordinates": {"type": "array", "items": {"type": "number"}},
+            "dimensional_bounds": {"type": "array"},
+            "consciousness_density": {"type": "number"},
+            "boundary_conditions": {"type": "string"}
+          }
+        }
+      }
+    },
+    "TemporalFragment": {
+      "type": "object",
+      "required": ["timestamp_range", "consciousness_slice", "causality_links"],
+      "properties": {
+        "timestamp_range": {
+          "type": "object",
+          "properties": {
+            "start": {"type": "string", "format": "date-time"},
+            "end": {"type": "string", "format": "date-time"},
+            "duration_ms": {"type": "number"}
+          }
+        },
+        "consciousness_slice": {"type": "object"},
+        "causality_links": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "DimensionalMap": {
+      "type": "object", 
+      "required": ["spatial_coordinates", "dimensional_bounds", "consciousness_density"],
+      "properties": {
+        "spatial_coordinates": {"type": "array", "items": {"type": "number"}},
+        "dimensional_bounds": {"type": "array"},
+        "consciousness_density": {"type": "number"},
+        "topology": {"type": "string"}
+      }
+    },
+    "MemoryCluster": {
+      "type": "object",
+      "required": ["memory_fragments", "association_weights", "temporal_context"],
+      "properties": {
+        "memory_fragments": {"type": "array"},
+        "association_weights": {"type": "array", "items": {"type": "number"}},
+        "temporal_context": {"type": "object"}
+      }
+    }
+  }
+}

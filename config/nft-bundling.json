@@ -1,0 +1,58 @@
+{
+  "blockchain_networks": {
+    "ethereum": {
+      "enabled": true,
+      "rpc_url": "https://mainnet.infura.io/v3/YOUR_API_KEY",
+      "gas_limit": 500000,
+      "gas_price_strategy": "medium",
+      "contract_template": "monsterdog_consciousness_nft.sol"
+    },
+    "polygon": {
+      "enabled": true,
+      "rpc_url": "https://polygon-rpc.com",
+      "gas_limit": 200000,
+      "gas_price_strategy": "fast",
+      "contract_template": "monsterdog_consciousness_nft_polygon.sol"
+    },
+    "arbitrum": {
+      "enabled": false,
+      "rpc_url": "https://arb1.arbitrum.io/rpc",
+      "gas_limit": 300000,
+      "gas_price_strategy": "low",
+      "contract_template": "monsterdog_consciousness_nft_arbitrum.sol"
+    },
+    "monsterdog_chain": {
+      "enabled": true,
+      "rpc_url": "https://rpc.monsterdog.network",
+      "gas_limit": 1000000,
+      "gas_price_strategy": "native",
+      "contract_template": "monsterdog_native_nft.sol"
+    }
+  },
+  "nft_metadata": {
+    "standard": "ERC-721",
+    "metadata_uri_base": "https://metadata.monsterdog.network/",
+    "image_uri_base": "https://images.monsterdog.network/",
+    "animation_uri_base": "https://animations.monsterdog.network/"
+  },
+  "smart_contract_features": {
+    "consciousness_verification": true,
+    "fractal_rendering": true,
+    "dimensional_bridging": true,
+    "temporal_locking": true,
+    "royalty_support": true,
+    "upgradeable": false
+  },
+  "file_formats": {
+    "primary": ".mdog",
+    "fallback": ".json",
+    "media": ".fractal",
+    "metadata": ".meta.json"
+  },
+  "bundling": {
+    "compression": "quantum_fractal",
+    "encryption": "AES-256-GCM",
+    "batch_size": 50,
+    "max_bundle_size": "10MB"
+  }
+}

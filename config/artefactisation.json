@@ -1,0 +1,52 @@
+{
+  "artifact_types": {
+    "ConsciousnessMatrix": {
+      "schema_version": "1.0",
+      "required_fields": ["consciousness_data", "temporal_bounds", "dimensional_mapping"],
+      "compression": "fractal_adaptive"
+    },
+    "TemporalFragment": {
+      "schema_version": "1.0", 
+      "required_fields": ["timestamp_range", "consciousness_slice", "causality_links"],
+      "compression": "temporal_lossless"
+    },
+    "DimensionalMap": {
+      "schema_version": "1.0",
+      "required_fields": ["spatial_coordinates", "dimensional_bounds", "consciousness_density"],
+      "compression": "spatial_optimized"
+    },
+    "MemoryCluster": {
+      "schema_version": "1.0",
+      "required_fields": ["memory_fragments", "association_weights", "temporal_context"],
+      "compression": "semantic_aware"
+    }
+  },
+  "metadata": {
+    "required_fields": [
+      "artifact_id",
+      "timestamp", 
+      "dimensions",
+      "compression_ratio",
+      "coherence_score",
+      "source_engine"
+    ],
+    "optional_fields": [
+      "tags",
+      "description",
+      "creator_id",
+      "processing_history"
+    ]
+  },
+  "validation": {
+    "schema_validation": true,
+    "coherence_check": true,
+    "dimension_validation": true,
+    "temporal_consistency": true
+  },
+  "processing": {
+    "max_artifact_size": "1GB",
+    "compression_algorithm": "fractal_quantum",
+    "metadata_encryption": "AES-256",
+    "batch_size": 100
+  }
+}
