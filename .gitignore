@@ -1,0 +1,6 @@
+# Generated files from MonsterDog system
+MONSTERDOG_METRICS_*.csv
+codex_supreme_data.json
+*.pyc
+__pycache__/
+.pytest_cache/
